@@ -1,7 +1,8 @@
 import React,{useState, useEffect} from "react";
 import Preview from "./Preview";
-import * as DOMPurify from 'dompurify';
+import DOMPurify from 'dompurify';
 import Toolbar from "./Toolbar";
+// import { flushSync } from "react-dom";
 
 const containerStyle = {
     display: 'flex',
@@ -13,15 +14,17 @@ const containerStyle = {
 }
 
 const editorStyle = {
-    margin: '0% auto 3% auto',
+    margin: '0% auto 4% auto',
     width: '60%',
-    
+    backgroundColor: 'grey',
 }
 
 const textareaStyle = {
-    width: '100%',
+    width: '99%',
     resize: 'vertical',
     padding: '1%',
+    height: '100%',
+    margin: '0% .5%',
 }
 
 const Editor = () => {
@@ -50,9 +53,11 @@ print("Hello, world!")
     const [typedText, setTypedText] = useState(onFirstLoadText)
 
     const setMarkDownOnHook = () => {
-        const editorField = document.getElementById('editor')
-        const text = DOMPurify.sanitize(marked.parse(editorField.value))        
-        setTypedText(text)
+        // flushSync(()=>{
+            const editorField = document.getElementById('editor')
+            const text = DOMPurify.sanitize(marked.parse(editorField.value))        
+            setTypedText(text)
+        // })
     }
     
     useEffect(()=>{
@@ -66,11 +71,11 @@ print("Hello, world!")
 
     return(
         <div id="wrapper" style={containerStyle}>
-            <div style={editorStyle}>
+            <div style={editorStyle} className="boxShadow">
             <Toolbar>
                 Editor
             </Toolbar>
-            <textarea name="editor" id="editor" cols="30" rows="10" style={textareaStyle}>
+            <textarea name="editor" id="editor" cols="30" rows="15" style={textareaStyle}>
 
             </textarea>
             </div>

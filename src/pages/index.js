@@ -15,7 +15,7 @@ export default function Home() {
       <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js" integrity="sha512-xeUh+KxNyTufZOje++oQHstlMQ8/rpyzPuM+gjMFYK3z5ILJGE7l2NvYL+XfliKURMpBIKKp1XoPN/qswlSMFA==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
       <script type="text/javascript" src="src/purify.js"></script>
       <Editor/>
-      <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+      {/* <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> */}
       </main>
     </>
   );

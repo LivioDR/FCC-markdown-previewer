@@ -5,12 +5,13 @@ const previewStyle = {
     height: '50vh',
     backgroundColor: '#cccccc',
     color: 'black',
+    padding: '2%',
 }
 
 
 const Preview = (props) => {
     return(
-        <div id="preview" style={previewStyle} dangerouslySetInnerHTML={{__html: props.children}}></div>
+        <div id="preview" style={previewStyle} className="boxShadow" dangerouslySetInnerHTML={{__html: props.children}}></div>
     )
 }
 export default Preview

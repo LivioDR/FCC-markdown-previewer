@@ -1,5 +1,6 @@
 import React from "react";
-import style from '../../styles/Home.module.css'
+import { Press_Start_2P } from "next/font/google"
+const pressStart = Press_Start_2P({weight: '400', subsets: ["latin"]})
 
 const toolbarStyle = {
     width: '100%',
@@ -10,7 +11,7 @@ const toolbarStyle = {
     backgroundColor: 'grey',
     color: 'black',
     height: '1.5em',
-
+    borderRadius: '3px 3px 0px 0px',
 }
 
 const btnContainerStyle = {
@@ -34,7 +35,7 @@ const toolbarTitleStyle = {
 
 const Toolbar = (props) => {
     return(
-        <div style={toolbarStyle}>
+        <div style={toolbarStyle} className={pressStart.className}>
             <div id="btnContainer" style={btnContainerStyle}>
                 <div style={{...button, backgroundColor: '#c85959' }}></div>
                 <div style={{...button, backgroundColor: 'darkgray' }}></div>
